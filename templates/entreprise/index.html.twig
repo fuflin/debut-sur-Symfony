@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Entreprises{% endblock %}
+
+{% block body %} {# parti contenant ce qu'on veux affiché #}
+    <h1>Liste des entreprises</h1>
+
+    <a href="{{ path('add_entreprise')}}">Ajouter une entreprise</a><br><br><br>
+
+    {% for entreprise in entreprises %}
+    
+        {# <a href="{{nom de route('nom de la fonction', {'id': nom objet.id})}}"></a> #}
+        <a href="{{ path('show_entreprise', {'id': entreprise.id})}}">{{ entreprise }}</a>
+        <a href="{{ path('edit_entreprise', {'id': entreprise.id})}}">Edit</a>
+        <a href="{{ path('delete_entreprise', {'id': entreprise.id})}}">Delete</a> <br><br>
+
+    {% endfor %}
+
+{% endblock %}
