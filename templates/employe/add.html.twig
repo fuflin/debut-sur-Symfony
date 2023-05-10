@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un(e) employe{% endblock %}
+
+{% block body %} {# parti contenant ce qu'on veux affiché #}
+
+    {% if edit %} {# on vérifie l'état de edit qui est un booléen #}
+        <h1>Editer un employé</h1>
+    {% else %}
+        <h1>Ajouter un employé</h1>
+    {% endif %}
+
+    {{ form(formAddEmploye) }}
+
+{% endblock %}
